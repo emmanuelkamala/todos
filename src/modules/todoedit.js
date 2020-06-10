@@ -1,6 +1,6 @@
+import { listArray } from './listarray'
 import { controller } from './controller'
 
-const listArray = []
 
 const todoEdit = (div, activeList, activeTodo) => {
     const editDiv = document.createElement('div')

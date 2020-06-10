@@ -1,6 +1,7 @@
 html {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 500;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+    font-size: 1.2rem;
 }
 
 body {
@@ -12,7 +13,7 @@ header {
     color: white;
     height: 50px;
     width: 100%;
-    background-color: #2e2ee6;
+    background-color: #29292b;
 }
 
 header h1 {
@@ -30,11 +31,11 @@ input {
 textarea {
     border-radius: 5px;
     border: solid 1px gray;
-    height: 50px;
+    height: 70px;
 }
 
 i {
-    max-height: 1px;
+    max-height: 2px;
     max-width: 1px;
     border: solid black;
     border-width: 0 3px 3px 0;
@@ -75,7 +76,7 @@ i {
     color: #fff;
     padding: 0 20px 0 20px;
     grid-column: 1 / 2;
-    background-color: #73affd;
+    background-color: #515253;
     box-shadow: 3px 1px 6px grey;
 }
 
@@ -170,7 +171,7 @@ p.todoDesc {
     color: #fff;
     border-radius: 5px;
     width: 110px;
-    height: 25px;
+    height: 30px;
     margin: 2px;
     background-color: #f00;
     border: 1px solid #f00;
@@ -208,11 +209,11 @@ p.todoDesc {
 
 .addProject, .addTodo {
     width: 150px;
-    height: 25px;
-    font-size: 13px;
+    height: 35px;
+    font-size: 16px;
     border: solid 0px #73affd;
     border-radius: 5px;
-    background: #2e2ee6;
+    background: #3fb906;
     color: #fff;
     margin-bottom: 10px;
     padding: 0;
@@ -227,7 +228,7 @@ p.todoDesc {
     color: #fff;
     border-radius: 5px;
     width: 110px;
-    height: 25px;
+    height: 30px;
     margin: 2px;
     background-color: #2e2ee6;
     border: 0px solid #2e2ee6;
@@ -248,10 +249,10 @@ p.todoDesc {
     color: #fff;
     border-radius: 5px;
     width: 110px;
-    height: 25px;
+    height: 30px;
     margin: 2px;
-    background-color: #ff3300;
-    border: 1px solid #f30;
+    background-color: #3cbe14;
+    border: 1px solid rgb(109, 238, 34);
 }
 
 .completed:hover {

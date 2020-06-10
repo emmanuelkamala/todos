@@ -1,8 +1,8 @@
+import { listArray } from './modules/listarray'
 import { pageLoad } from './modules/loadpage'
 import { controller } from './modules/controller'
 import { listContent } from './modules/content'
 
-const listArray = [];
 
 controller()
 

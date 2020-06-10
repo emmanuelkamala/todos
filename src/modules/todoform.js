@@ -1,7 +1,6 @@
+import { listArray } from './listarray'
 import { controller } from './controller'
 import { listContent } from './content'
-
-const listArray = []
 
 const addTodoForm = (div, list) => {
     let listID = listArray.indexOf(listArray[list])
