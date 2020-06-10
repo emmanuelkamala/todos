@@ -1,8 +1,9 @@
 import { Project } from './Project'
 import { Todo } from './Todo'
-import { listArray } from './listArray'
-import { listContent } from './listContent'
-import { todoContent } from './todoContent'
+import { listContent } from './content'
+import { todoContent } from './todocontent'
+
+const listArray = []
 
 const controller = () => {
     const addTodo = (project, title, description, dueDate, priority) => {

@@ -1,6 +1,8 @@
-import { listArray } from './listArray'
+
 import { controller, defaultSettings } from './controller'
-import { todoEdit } from './todoEdit'
+import { todoEdit } from './todoedit'
+
+const listArray = []
 
 const todoContent = (div, list, activeTodo) => {
     const appendElements = (parentDiv, elements) => {

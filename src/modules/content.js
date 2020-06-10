@@ -1,7 +1,8 @@
 
-import { listArray } from './listArray'
 import { controller, defaultSettings } from './controller'
-import { addTodoForm } from './addTodoForm'
+import { addTodoForm } from './todoform'
+
+const listArray = []
 
 const listContent = list => {
     function textCompleted() {
