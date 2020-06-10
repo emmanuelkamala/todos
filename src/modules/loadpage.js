@@ -14,7 +14,7 @@ const pageLoad = () => {
     }
 
     const pageTitle = document.createElement('h1')
-    pageTitle.textContent = 'Todo List'
+    pageTitle.textContent = 'My Todos'
     bodyElements.header.appendChild(pageTitle)
 
     const main = document.querySelector('.main')

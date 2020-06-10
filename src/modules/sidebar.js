@@ -18,7 +18,7 @@ const sidebar = () => {
 
     const sideTitle = document.createElement('h2')
     const arrow = document.createElement('i')
-    sideTitle.textContent = 'Your Lists'
+    sideTitle.textContent = 'My Todo Lists'
 
     sideElements.titleDiv.appendChild(sideTitle)
     sideElements.titleDiv.appendChild(arrow)

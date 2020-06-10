@@ -46,7 +46,7 @@ const listContent = list => {
     controller().renderTodos(list)
 
     buttonsElements.delete.addEventListener('click', function() {
-        if (window.confirm('To confirm deleting this List, Press "OK"')) {
+        if (window.confirm('Are you sure you want to delete this?')) {
             controller().deleteProject(listArray.indexOf(listArray[list]))
             controller().clearDiv(mainContent)
             controller().renderList()
