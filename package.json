@@ -4,9 +4,8 @@
   "description": "Its a small project practicing DOM manipulation by dynamically rendering todo lists on the view! In the end, I am going to be using JavaScript alone to generate the entire contents of the website!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "dev": "webpack-dev-server"
+    "build": "webpack --mode production",
+    "dev": "webpack-dev-server --mode development"
   },
   "repository": {
     "type": "git",

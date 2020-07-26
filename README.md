@@ -1,8 +1,8 @@
 # Project: A Todo List App
 
-Its a small project practicing DOM manipulation by dynamically rendering todo lists on the view! In the end, I am going to be using JavaScript alone to generate the entire contents of the website!
+Its a small project practicing DOM manipulation by dynamically rendering todo lists on the view! In the end. A user can create a project and add a list of todo tasks to perform and select a date to finish it up. Also once a task has been completed, a user can tick it off and delete it from the project. 
 
-![screenshot](./dist/img/todo.png)
+![screenshot](./dist/images/todo.png)
 
 
 
@@ -10,7 +10,10 @@ Its a small project practicing DOM manipulation by dynamically rendering todo li
 
 - HTML
 - CSS
-- java script
+- javascript
+- Webpack
+- Bootstrap 
+
 
 ## Live Version
 

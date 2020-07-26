@@ -1,64 +1,83 @@
-import { listArray } from './modules/listarray'
-import { pageLoad } from './modules/loadpage'
-import { controller } from './modules/controller'
-import { listContent } from './modules/content'
+import { RenderProject } from './controller'
 
 
-controller()
+const render = RenderProject();
 
-pageLoad()
+/**
+ * listen to the event when click on the delte icon on the project
+ */
+document.getElementById('projects-body').addEventListener('click', function (e) {
 
-if (localStorage.length > 0) {
-    for (let x = 0; x < localStorage.length; x++) {
-        listArray.push(JSON.parse(localStorage.getItem(`list${x}`)))
+    if (e.target && e.target.dataset.deleteIndex != undefined) {
+        let index = e.target.dataset.deleteIndex;
+        render.deleteProject(index);
     }
-} else {
-    // This sets up the App for first time use.
-    controller().addProject(
-        'Tutorial - BEGIN HERE',
-        'Hello, and welcome to Todo List.'
-    )
-    controller().addProject('General', 'Your Daily list of todos')
-    controller().addTodo(
-        listArray[0],
-        'Click here to see more information',
-        "Click the '+ Edit Todo' button below to change the Title, description, due date, and/or the priority of the todo",
-        '',
-        'High'
-    )
-    controller().addTodo(
-        listArray[0],
-        '<- Click the checkbox to mark the todo as finished',
-        '',
-        '',
-        'Low'
-    )
-    controller().addTodo(
-        listArray[0],
-        "Click the '+ Add New Todo' to create a new todo",
-        '',
-        '',
-        'None'
-    )
-    controller().addTodo(
-        listArray[0],
-        "Click the orange 'Show Completed' button on the top",
-        'This shows todos that you have completed previously.',
-        '',
-        'Medium'
-    )
-    controller().addTodo(
-        listArray[0],
-        "Click the red 'Delete List' to finish this Tutorial",
-        '',
-        '',
-        'Low'
-    )
+})
+
+/**
+ * this function renders the todos inside any project depends on the click target
+ */
+document.getElementById('projects-body').addEventListener('click', function (e) {
+    if (e.target && e.target.dataset.infoIndex != undefined) {
+        let index = e.target.dataset.infoIndex;
+        render.renderSelectedProjectName(index);
+        render.clearTodosListUi();
+        render.renderTodo(index);
+    }
+})
+
+/**
+ * this function render the projects from the objects array
+ * once the user add new project and click add button
+ */
+const renderCurrentProjects = function () {
+
+    render.clearProjectsListUi();
+
+    let projName = document.getElementById('project-input-name').value;
+
+    render.addProject(projName);
+
+    render.renderProjects();
+
+    document.getElementById('project-input-name').value = "";
+
+    //hide the form after clicking the button
+    $('.modal').modal('hide')
+
+    //this function call to control todo items toggling
+    render.toggleTodo();
 }
 
-// Show the first list on page load
-if (listArray.length > 0) {
-    listContent(0)
+
+
+/**
+ * this function adds a new Todo to a specific proect's todos array
+ * at a specific index
+ */
+const addNewTodo = function () {
+    let selectedProjName = document.getElementById('selected-project-name');
+    let index = selectedProjName.getAttribute('selected-name-index');
+    render.addTodo(index);
+    render.clearTodosListUi();
+    render.renderTodo(index);
+    document.getElementById('todo-input-name').value = "";
+    document.getElementById('todo-input-description').value = "";
+    document.getElementById('todo-date').value = "";
+    document.getElementById('priority').value = "";
+    //hide the form after clicking the button
+    $('.modal').modal('hide')
+    //this function call to control todo items toggling
+    render.toggleTodo();
 }
 
-controller().renderList()
+
+// Add project button event when it's clicked
+document.getElementById('add-project-button').addEventListener('click', renderCurrentProjects);
+
+// Add todo button event when it's clicked
+document.getElementById('add-todo-button').addEventListener('click', addNewTodo);
+
+//this function call to control todo items toggling
+render.toggleTodo();
+

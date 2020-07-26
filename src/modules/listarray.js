@@ -1,3 +1,0 @@
-const listArray = []
-
-export { listArray }
