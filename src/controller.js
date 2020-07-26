@@ -340,7 +340,3 @@ projectsArray[0].todos.push(tutotialTodo6);
 render.renderProjects();
 render.renderTodo(0);
 render.renderSelectedProjectName(0);
-
-
-
-

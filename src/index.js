@@ -49,8 +49,6 @@ const renderCurrentProjects = function () {
     render.toggleTodo();
 }
 
-
-
 /**
  * this function adds a new Todo to a specific proect's todos array
  * at a specific index
