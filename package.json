@@ -27,5 +27,11 @@
   },
   "dependencies": {
     "date-fns": "^2.15.0"
-  }
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+        "jsx": true,
+        "modules": true
+    }
+}
 }
