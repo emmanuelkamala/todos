@@ -1,11 +1,11 @@
-import { model } from './model.js';
-import { renderForm } from './renderForm.js';
-import { renderProjects } from './renderProjects.js';
-import { renderList } from './renderList.js';
+import { model } from './model';
+import { renderForm } from './renderForm';
+import { renderProjects } from './renderProjects';
+import { renderList } from './renderList';
 
 const controller = (() => {
-	let selectedId = 0;
-	let itemId = 0;
+let selectedId = 0;
+let itemId = 0;
 
 	const listen = () => {
 		window.addEventListener('click', (e) => {
