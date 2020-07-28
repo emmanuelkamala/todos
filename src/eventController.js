@@ -4,21 +4,20 @@ import { renderProjects } from './renderProjects';
 import { renderList } from './renderList';
 
 const controller = (() => {
-let selectedId = 0;
-let itemId = 0;
+  let selectedId = 0;
+  let itemId = 0;
 
-	const listen = () => {
-		window.addEventListener('click', (e) => {
-			switch (e.target.className) {
-				// Open new project form
-				case 'new-project-btn':
-					renderForm.remove();
-					renderForm.show('project');
-					break;
-					
+  const listen = () => {
+    window.addEventListener('click', (e) => {
+      switch (e.target.className) {
+        // Open new project form
+        case 'new-project-btn':
+          renderForm.remove();
+          renderForm.show('project');
+          break;	
 				// Create new project
-				case 'button create-project-btn':
-					if (model.validateProjectForm()) {
+          case 'button create-project-btn':
+        if (model.validateProjectForm()) {
 						model.createProject();
 						renderForm.remove();
 						renderProjects.renderNew();
