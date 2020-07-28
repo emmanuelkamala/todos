@@ -1,5 +1,5 @@
 {
-    /*"env": {
+    "env": {
       "browser": true,
       "es6": true,
       "jest": true
@@ -14,5 +14,5 @@
       "no-param-reassign": "off",
       "eol-last": "off",
       "arrow-parens": "off"
-    }*/
+    }
   }
