@@ -15,22 +15,22 @@ const controller = (() => {
           renderForm.remove();
           renderForm.show('project');
           break;	
-				// Create new project
-          case 'button create-project-btn':
-        if (model.validateProjectForm()) {
-						model.createProject();
-						renderForm.remove();
-						renderProjects.renderNew();
-						selectedId = _findCurrentId();
-					}
-					break;
+          // Create new project
+        case 'button create-project-btn':
+          if (model.validateProjectForm()) {
+            model.createProject();
+            renderForm.remove();
+            renderProjects.renderNew();
+            selectedId = _findCurrentId();
+          }
+          break;
 
-				// Open edit project form	
-				case 'edit-project-btn':
-					selectedId = _findCurrentId();
-					renderForm.remove();
-					renderForm.show('project', selectedId);
-					break;
+          // Open edit project form	
+        case 'edit-project-btn':
+          selectedId = _findCurrentId();
+          renderForm.remove();
+          renderForm.show('project', selectedId);
+          break;
 
 				// Update project
 				case 'button update-project-btn':
@@ -40,23 +40,23 @@ const controller = (() => {
 					renderForm.remove();
 					break;
 
-				// Destroy project
-				case 'destroy-project-btn':
-					selectedId = _findCurrentId();
-					if (confirm('Are you sure you want to delete this project?')) 
-					{
-						model.destroyProjectItems(selectedId);
-						model.destroyProject(selectedId);
-						renderProjects.destroyProject(selectedId);
-						renderList.clearList();
-						renderProjects.render();
-						selectedId = _findCurrentId();
-					}
-					break;
+        // Destroy project
+        case 'destroy-project-btn':
+          selectedId = _findCurrentId();
+          if (confirm('Are you sure you want to delete this project?')) 
+          {
+            model.destroyProjectItems(selectedId);
+            model.destroyProject(selectedId);
+            renderProjects.destroyProject(selectedId);
+            renderList.clearList();
+            renderProjects.render();
+            selectedId = _findCurrentId();
+          }
+          break;
 
-				// Open new item form
-				case 'new-item-btn':
-					selectedId = document.querySelector('.column-btn-selected').dataset.id;
+        // Open new item form
+        case 'new-item-btn':
+          selectedId = document.querySelector('.column-btn-selected').dataset.id;
 					renderForm.remove();
 					renderForm.show('item');
 					break;
