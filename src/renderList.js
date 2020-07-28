@@ -65,11 +65,11 @@ const renderList = (() => {
 		row.classList.add('list-row');
 		row.classList.add('title-row');
 		const done = document.createElement('span');
-		done.textContent = 'Done?';
+		done.textContent = 'Is It Complete?';
 		const title = document.createElement('span');
 		title.textContent = 'Title';
 		const date = document.createElement('span');
-		date.textContent = 'Due date';
+		date.textContent = 'End date';
 		row.appendChild(done);
 		row.appendChild(title);
 		row.appendChild(date);
