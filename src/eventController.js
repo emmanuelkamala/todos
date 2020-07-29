@@ -105,8 +105,8 @@ const controller = (() => {
   };
 
   // PRIVATE
-
-  const _findCurrentId = () => {
+  let findCurrentId = _findCurrentId;
+  findCurrentId = () => {
     if (model.projects.length > 0) {
       const currentProject = document.querySelector('.column-btn-selected');
       return parseInt(currentProject.dataset.id, 10);
