@@ -5,7 +5,9 @@ const model = (() => {
   let itemId;
   // Factory function for new project
   const Project = (title, id) => {
-    return { title, id }
+    return { title, 
+             id 
+    };
   };
 
   // Factory function for new list item

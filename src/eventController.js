@@ -11,12 +11,12 @@ const controller = (() => {
   const listen = () => {
     window.addEventListener('click', (e) => {
       switch (e.target.className) {
-      // Open new project form
+        // Open new project form
         case 'new-project-btn':
           renderForm.remove();
           renderForm.show('project');
           break;
-      // Create new project
+        // Create new project
         case 'button create-project-btn':
           if (model.validateProjectForm()) {
             model.createProject();
@@ -30,16 +30,16 @@ const controller = (() => {
           renderForm.remove();
           renderForm.show('project', selectedId);
           break;
-      // Update project
+        // Update project
         case 'button update-project-btn':
           const project = model.getProject(selectedId);
           model.updateProject(selectedId);
           renderProjects.updateProjectBtn(selectedId, project.title);
           renderForm.remove();
           break;
-      // Destroy project
+        // Destroy project
         case 'destroy-project-btn':
-          selectedId = _findCurrentId();
+          selectedId = findCurrentId();
           if (confirm('Are you sure you want to delete this project?'))
           {
             model.destroyProjectItems(selectedId);
@@ -50,14 +50,14 @@ const controller = (() => {
             selectedId = findCurrentId();
           }
           break;
-      // Open new item form
+        // Open new item form
         case 'new-item-btn':
           selectedId = document.querySelector('.column-btn-selected').dataset.id;
           renderForm.remove();
           renderForm.show('item');
           break;
 
-      // Create new item
+        // Create new item
         case 'button create-item-btn':
           if (model.validateItemForm()) {
             model.createItem(selectedId);
@@ -65,20 +65,20 @@ const controller = (() => {
           }
           renderList.render(selectedId);
           break;
-      // Open edit item form
-        case 'item-edit': 
+        // Open edit item form
+        case 'item-edit':
           itemId = parseInt(e.target.parentNode.attributes[1].value, 10);
           renderForm.remove();
           renderForm.show('item', itemId);
           break;
-      // Update item
+        // Update item
         case 'button update-item-btn':
           model.updateItem(itemId);
           const data = model.getItemFormData();
           renderList.updateItemRow(itemId, data);
           renderForm.remove();
           break;
-      // Destroy individual item
+        // Destroy individual item
         case 'item-remove':
           {
             const itId = parseInt(e.target.parentNode.attributes[1].value, 10);
@@ -86,19 +86,19 @@ const controller = (() => {
             renderList.destroyItem(itId);
           }
           break;
-      // Select project from sidebar
+        // Select project from sidebar
         case 'column-btn':
           renderProjects.toggleProjects(e);
           selectedId = parseInt(e.target.attributes[1].value, 10);
           break;
-      // Mark item as done
+        // Mark item as done
         case 'item-done': {
           const id = parseInt(e.target.attributes[1].value, 10);
           const item = model.getItem(id);
-          item.done = e.target.checked
+          item.done = e.target.checked;
         }
           break;
-      // Cancel and close form
+        // Cancel and close form
         case 'button cancel':
           renderForm.remove();
           break;
