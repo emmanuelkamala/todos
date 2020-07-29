@@ -1,6 +1,6 @@
-import { renderApp } from './renderApp.js';
-import { controller } from './eventController.js';
-import { model } from './model.js';
+import { renderApp } from './renderApp';
+import  controller  from './eventController';
+import { model } from './model';
 
 model.loadSaved();
 renderApp.render();

@@ -23,14 +23,12 @@ const controller = (() => {
             renderProjects.renderNew();
             selectedId = _findCurrentId();
           }
-          break;
-          // Open edit project form	
+          break;	
         case 'edit-project-btn':
           selectedId = _findCurrentId();
           renderForm.remove();
           renderForm.show('project', selectedId);
           break;
-
         // Update project
         case 'button update-project-btn':
           const project = model.getProject(selectedId);
@@ -38,7 +36,6 @@ const controller = (() => {
           renderProjects.updateProjectBtn(selectedId, project.title);
           renderForm.remove();
           break;
-
         // Destroy project
         case 'destroy-project-btn':
           selectedId = _findCurrentId();
@@ -51,7 +48,6 @@ const controller = (() => {
             selectedId = _findCurrentId();
           }
           break;
-
         // Open new item form
         case 'new-item-btn':
           selectedId = document.querySelector('.column-btn-selected').dataset.id;
@@ -67,7 +63,6 @@ const controller = (() => {
           }
           renderList.render(selectedId);
           break;
-
         // Open edit item form
         case 'item-edit': 
           itemId = parseInt(e.target.parentNode.attributes[1].value, 10);
@@ -81,7 +76,6 @@ const controller = (() => {
           renderList.updateItemRow(itemId, data);
           renderForm.remove();
           break;
-
         // Destroy individual item
         case 'item-remove':
           {
@@ -90,12 +84,6 @@ const controller = (() => {
             renderList.destroyItem(itId);
           }
           break;
-
-        // Cancel and close form
-        case 'button cancel':
-          renderForm.remove();
-          break;
-
         // Select project from sidebar
         case 'column-btn':
           renderProjects.toggleProjects(e);
@@ -107,6 +95,10 @@ const controller = (() => {
           const item = model.getItem(id);
           item.done = e.target.checked
         }
+          break;
+        // Cancel and close form
+        case 'button cancel':
+          renderForm.remove();
           break;
       }
     });
