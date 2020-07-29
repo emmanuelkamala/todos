@@ -21,11 +21,11 @@ const controller = (() => {
             model.createProject();
             renderForm.remove();
             renderProjects.renderNew();
-            selectedId = _findCurrentId();
+            selectedId = findCurrentId();
           }
           break;	
         case 'edit-project-btn':
-          selectedId = _findCurrentId();
+          selectedId = findCurrentId();
           renderForm.remove();
           renderForm.show('project', selectedId);
           break;
@@ -45,7 +45,7 @@ const controller = (() => {
             renderProjects.destroyProject(selectedId);
             renderList.clearList();
             renderProjects.render();
-            selectedId = _findCurrentId();
+            selectedId = findCurrentId();
           }
           break;
         // Open new item form
