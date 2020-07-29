@@ -3,12 +3,10 @@ import { renderForm } from './renderForm';
 import { renderProjects } from './renderProjects';
 import { renderList } from './renderList';
 
-
-
 const controller = (() => {
   let selectedId = 0;
   let itemId = 0;
-  let findCurrentId = _findCurrentId;
+  let findCurrentId;
 
   const listen = () => {
 
@@ -27,7 +25,7 @@ const controller = (() => {
           renderProjects.renderNew();
           selectedId = findCurrentId();
         }
-        break;	
+        break;
       case 'edit-project-btn':
         selectedId = findCurrentId();
         renderForm.remove();
