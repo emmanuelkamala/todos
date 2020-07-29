@@ -1,5 +1,5 @@
 import { renderApp } from './renderApp';
-import  controller  from './eventController';
+import  controller from './eventController';
 import { model } from './model';
 
 model.loadSaved();
