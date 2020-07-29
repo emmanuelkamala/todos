@@ -14,8 +14,8 @@ const controller = (() => {
         case 'new-project-btn':
           renderForm.remove();
           renderForm.show('project');
-          break;	
-          // Create new project
+          break;
+        // Create new project
         case 'button create-project-btn':
           if (model.validateProjectForm()) {
             model.createProject();
@@ -24,7 +24,6 @@ const controller = (() => {
             selectedId = _findCurrentId();
           }
           break;
-
           // Open edit project form	
         case 'edit-project-btn':
           selectedId = _findCurrentId();
@@ -43,8 +42,7 @@ const controller = (() => {
         // Destroy project
         case 'destroy-project-btn':
           selectedId = _findCurrentId();
-          if (confirm('Are you sure you want to delete this project?')) 
-          {
+          if (('Are you sure you want to delete this project?')) {
             model.destroyProjectItems(selectedId);
             model.destroyProject(selectedId);
             renderProjects.destroyProject(selectedId);
@@ -76,7 +74,6 @@ const controller = (() => {
           renderForm.remove();
           renderForm.show('item', itemId);
           break;
-				
         // Update item
         case 'button update-item-btn':
           model.updateItem(itemId);
@@ -104,10 +101,8 @@ const controller = (() => {
           renderProjects.toggleProjects(e);
           selectedId = parseInt(e.target.attributes[1].value, 10);
           break;
-					
         // Mark item as done
-        case 'item-done': 
-          {
+        case 'item-done': {
             const id = parseInt(e.target.attributes[1].value, 10);
             const item = model.getItem(id);
             item.done = e.target.checked ? true : false;
