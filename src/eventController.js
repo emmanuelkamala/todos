@@ -42,7 +42,7 @@ const controller = (() => {
         // Destroy project
         case 'destroy-project-btn':
           selectedId = _findCurrentId();
-          if (('Are you sure you want to delete this project?')) {
+          if (confirm('Are you sure you want to delete this project?')) {
             model.destroyProjectItems(selectedId);
             model.destroyProject(selectedId);
             renderProjects.destroyProject(selectedId);
@@ -103,27 +103,25 @@ const controller = (() => {
           break;
         // Mark item as done
         case 'item-done': {
-            const id = parseInt(e.target.attributes[1].value, 10);
-            const item = model.getItem(id);
-            item.done = e.target.checked ? true : false;
-          }
-          break;
+          const id = parseInt(e.target.attributes[1].value, 10);
+          const item = model.getItem(id);
+          item.done = e.target.checked
         }
+          break;
+      }
     });
-  }
+  };
 
   // PRIVATE
 
   const _findCurrentId = () => {
     if (model.projects.length > 0) {
       const currentProject = document.querySelector('.column-btn-selected');
-      return parseInt(currentProject.dataset.id);
+      return parseInt(currentProject.dataset.id, 10);
     }
-  }
+  };
 
   return { listen };
 })();
 
-export { controller };
-
-
+export default controller;
