@@ -72,7 +72,7 @@ const controller = (() => {
 
         // Open edit item form
         case 'item-edit': 
-          itemId = parseInt(e.target.parentNode.attributes[1].value);
+          itemId = parseInt(e.target.parentNode.attributes[1].value, 10);
           renderForm.remove();
           renderForm.show('item', itemId);
           break;
@@ -88,7 +88,7 @@ const controller = (() => {
         // Destroy individual item
         case 'item-remove':
           {
-            const itId = parseInt(e.target.parentNode.attributes[1].value);
+            const itId = parseInt(e.target.parentNode.attributes[1].value, 10);
             model.destroyItem(itId);
             renderList.destroyItem(itId);
           }
@@ -102,13 +102,13 @@ const controller = (() => {
         // Select project from sidebar
         case 'column-btn':
           renderProjects.toggleProjects(e);
-          selectedId = parseInt(e.target.attributes[1].value);
+          selectedId = parseInt(e.target.attributes[1].value, 10);
           break;
 					
         // Mark item as done
         case 'item-done': 
           {
-            const id = parseInt(e.target.attributes[1].value);
+            const id = parseInt(e.target.attributes[1].value, 10);
             const item = model.getItem(id);
             item.done = e.target.checked ? true : false;
           }
