@@ -3,6 +3,8 @@ import { renderForm } from './renderForm';
 import { renderProjects } from './renderProjects';
 import { renderList } from './renderList';
 
+let findCurrentId = _findCurrentId;
+
 const controller = (() => {
   let selectedId = 0;
   let itemId = 0;
@@ -105,7 +107,7 @@ const controller = (() => {
   };
 
   // PRIVATE
-  let findCurrentId = _findCurrentId;
+ 
   findCurrentId = () => {
     if (model.projects.length > 0) {
       const currentProject = document.querySelector('.column-btn-selected');
