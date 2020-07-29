@@ -5,12 +5,12 @@ const model = (() => {
   let itemId;
   // Factory function for new project
   const Project = (title, id) => {
-    return { title, id };
+    return { title, id }
   };
 
   // Factory function for new list item
   const Item = (title, description, dueDate, priority, projectId, id, done) => {
-    return { title, description, dueDate, priority, projectId, id, done };
+    return { title, description, dueDate, priority, projectId, id, done }
   };
 
   // load data from localStorage
@@ -21,7 +21,7 @@ const model = (() => {
     const savedItemId = JSON.parse(localStorage.getItem('itemId'));
 
     if (savedProjId) {
-        projId = savedProjId;
+      projId = savedProjId;
     } else {
         projId = 0;
         localStorage.setItem('projId', JSON.stringify(projId));
