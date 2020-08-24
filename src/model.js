@@ -59,28 +59,28 @@ const model = (() => {
             item.priority,
             item.projectId,
             item.id,
-            item.done,);
+            item.done);
           items.push(newItem);
-        })
-      };
+        });
+      }
     } else {
       projects.push(Project('default', 'default project', projId++));
       localStorage.setItem('projects', JSON.stringify(projects));
       localStorage.setItem('projId', JSON.stringify(projId));
     }
-  }
+  };
 
   // Form validations
   const validateProjectForm = () => {
     const title = document.forms['ProjectForm']['title'];
-    if (title.value == '') {
-      window.alert('Please enter a title.');
+    if (title.value === '') {
+      alert('Please enter a title.');
       title.focus();
       return false;
     }
 
-      return true;
-  }
+    return true;
+  };
 
   const validateItemForm = () => {
     const title = document.forms['ItemForm']['title'];
