@@ -5,14 +5,23 @@ const model = (() => {
   let itemId;
   // Factory function for new project
   const Project = (title, id) => {
-    return { title, 
-             id 
+    return {
+      title,
+      id
     };
   };
 
   // Factory function for new list item
   const Item = (title, description, dueDate, priority, projectId, id, done) => {
-    return { title, description, dueDate, priority, projectId, id, done }
+    return { 
+      title,
+      description,
+      dueDate,
+      priority,
+      projectId,
+      id,
+      done
+    }
   };
 
   // load data from localStorage
@@ -25,20 +34,20 @@ const model = (() => {
     if (savedProjId) {
       projId = savedProjId;
     } else {
-        projId = 0;
-        localStorage.setItem('projId', JSON.stringify(projId));
+      projId = 0;
+      localStorage.setItem('projId', JSON.stringify(projId));
     }
 
     if (savedItemId) {
-        itemId = savedItemId;
+      itemId = savedItemId;
     } else {
-        itemId = 0;
-        localStorage.setItem('itemId', JSON.stringify(itemId));
+      itemId = 0;
+      localStorage.setItem('itemId', JSON.stringify(itemId));
     }
 
     if (savedProjects && savedProjects.length > 0) {
-        savedProjects.forEach(project => {
-          const newProj = Project(project.title, project.id);
+      savedProjects.forEach(project => {
+        const newProj = Project(project.title, project.id);
           projects.push(newProj);
         });
 

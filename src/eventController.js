@@ -40,7 +40,7 @@ const controller = (() => {
         // Destroy project
         case 'destroy-project-btn':
           selectedId = findCurrentId();
-          if (alert('Are you sure you want to delete this project?')){
+          if (alert('Are you sure you want to delete this project?')) {
             model.destroyProjectItems(selectedId);
             model.destroyProject(selectedId);
             renderProjects.destroyProject(selectedId);
