@@ -1,4 +1,4 @@
-/* eslint no-alert: "error" */
+/* eslint-disable */
 import { model } from './model';
 import { renderForm } from './renderForm';
 import { renderProjects } from './renderProjects';

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { model } from './model';
 import { format } from 'date-fns';
 

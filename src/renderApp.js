@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { renderProjects } from './renderProjects';
 import { renderList } from './renderList';
 

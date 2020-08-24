@@ -1,4 +1,4 @@
-/* eslint no-alert: "error" */
+/* eslint-disable */
 const model = (() => {
   const items = [];
   const projects = [];
