@@ -1,4 +1,4 @@
-/*eslint no-alert: "error"*/
+/* eslint no-alert: "error" */
 const model = (() => {
   const items = [];
   const projects = [];
@@ -65,7 +65,7 @@ const model = (() => {
         });
       }
     } else {
-      projects.push(Project('default', 'default project', projId++));
+      projects.push(Project('default', 'default project', projId += 1));
       localStorage.setItem('projects', JSON.stringify(projects));
       localStorage.setItem('projId', JSON.stringify(projId));
     }
@@ -94,7 +94,7 @@ const model = (() => {
       return false;
     }
 
-    if (description.value == '') {
+    if (description.value === '') {
       window.alert('Please enter a description.');
       description.focus();
       return false;
