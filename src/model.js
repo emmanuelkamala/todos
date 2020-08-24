@@ -22,7 +22,7 @@ const model = (() => {
       id,
       done,
     };
-  }
+  };
 
   // load data from localStorage
   const loadSaved = () => {
@@ -54,20 +54,19 @@ const model = (() => {
       if (savedItems) {
         savedItems.forEach(item => {
           const newItem = Item(item.title,
-                               item.description,
-                               item.dueDate,
-                               item.priority,
-                               item.projectId,
-                               item.id,
-                               item.done
-                              );
-      items.push(newItem);
-      })
-    }
-  } else {
-        projects.push(Project('default', 'default project', projId++));
-        localStorage.setItem('projects', JSON.stringify(projects));
-        localStorage.setItem('projId', JSON.stringify(projId));
+            item.description,
+            item.dueDate,
+            item.priority,
+            item.projectId,
+            item.id,
+            item.done,);
+          items.push(newItem);
+        })
+      };
+    } else {
+      projects.push(Project('default', 'default project', projId++));
+      localStorage.setItem('projects', JSON.stringify(projects));
+      localStorage.setItem('projId', JSON.stringify(projId));
     }
   }
 
