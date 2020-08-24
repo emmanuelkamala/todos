@@ -7,22 +7,22 @@ const model = (() => {
   const Project = (title, id) => {
     return {
       title,
-      id
+      id,
     };
   };
 
   // Factory function for new list item
   const Item = (title, description, dueDate, priority, projectId, id, done) => {
-    return { 
+    return {
       title,
       description,
       dueDate,
       priority,
       projectId,
       id,
-      done
-    }
-  };
+      done,
+    };
+  }
 
   // load data from localStorage
   const loadSaved = () => {
@@ -48,16 +48,23 @@ const model = (() => {
     if (savedProjects && savedProjects.length > 0) {
       savedProjects.forEach(project => {
         const newProj = Project(project.title, project.id);
-          projects.push(newProj);
-        });
+        projects.push(newProj);
+      });
 
-    if (savedItems) {
-      savedItems.forEach(item => {
-        const newItem = Item(item.title, item.description, item.dueDate, item.priority, item.projectId, item.id, item.done);
-        items.push(newItem);
-        })
-      }
-    } else {
+      if (savedItems) {
+        savedItems.forEach(item => {
+          const newItem = Item(item.title,
+                               item.description,
+                               item.dueDate,
+                               item.priority,
+                               item.projectId,
+                               item.id,
+                               item.done
+                              );
+      items.push(newItem);
+      })
+    }
+  } else {
         projects.push(Project('default', 'default project', projId++));
         localStorage.setItem('projects', JSON.stringify(projects));
         localStorage.setItem('projId', JSON.stringify(projId));
