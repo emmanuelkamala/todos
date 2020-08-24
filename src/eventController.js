@@ -13,12 +13,13 @@ const controller = (() => {
     window.addEventListener('click', (e) => {
       switch (e.target.className) {
         // Open new project form
-        case 'new-project-btn':
+        case 'new-project-btn': {
           renderForm.remove();
           renderForm.show('project');
           break;
+        }
         // Create new project
-        case 'button create-project-btn':
+        case 'button create-project-btn': {
           if (model.validateProjectForm()) {
             model.createProject();
             renderForm.remove();
@@ -26,20 +27,23 @@ const controller = (() => {
             selectedId = findCurrentId();
           }
           break;
-        case 'edit-project-btn':
+        }
+        case 'edit-project-btn': {
           selectedId = findCurrentId();
           renderForm.remove();
           renderForm.show('project', selectedId);
           break;
+        }
         // Update project
-        case 'button update-project-btn':
+        case 'button update-project-btn': {
           const project = model.getProject(selectedId);
           model.updateProject(selectedId);
           renderProjects.updateProjectBtn(selectedId, project.title);
           renderForm.remove();
           break;
+        }
         // Destroy project
-        case 'destroy-project-btn':
+        case 'destroy-project-btn': {
           selectedId = findCurrentId();
           if (alert('Are you sure you want to delete this project?')) {
             model.destroyProjectItems(selectedId);
@@ -50,58 +54,64 @@ const controller = (() => {
             selectedId = findCurrentId();
           }
           break;
+        }
         // Open new item form
-        case 'new-item-btn':
+        case 'new-item-btn': {
           selectedId = document.querySelector('.column-btn-selected').dataset.id;
           renderForm.remove();
           renderForm.show('item');
           break;
-
+        }
         // Create new item
-        case 'button create-item-btn':
+        case 'button create-item-btn': {
           if (model.validateItemForm()) {
             model.createItem(selectedId);
             renderForm.remove();
           }
           renderList.render(selectedId);
           break;
+        }
         // Open edit item form
-        case 'item-edit':
+        case 'item-edit': {
           itemId = parseInt(e.target.parentNode.attributes[1].value, 10);
           renderForm.remove();
           renderForm.show('item', itemId);
           break;
+        }
         // Update item
-        case 'button update-item-btn':
+        case 'button update-item-btn': {
           model.updateItem(itemId);
           const data = model.getItemFormData();
           renderList.updateItemRow(itemId, data);
           renderForm.remove();
           break;
+        }
         // Destroy individual item
-        case 'item-remove':
+        case 'item-remove': {
           {
             const itId = parseInt(e.target.parentNode.attributes[1].value, 10);
             model.destroyItem(itId);
             renderList.destroyItem(itId);
           }
           break;
+        }
         // Select project from sidebar
-        case 'column-btn':
+        case 'column-btn': {
           renderProjects.toggleProjects(e);
           selectedId = parseInt(e.target.attributes[1].value, 10);
           break;
+        }
         // Mark item as done
         case 'item-done': {
           const id = parseInt(e.target.attributes[1].value, 10);
           const item = model.getItem(id);
           item.done = e.target.checked;
+          break;
         }
-          break;
         // Cancel and close form
-        case 'button cancel':
+        default: {
           renderForm.remove();
-          break;
+        }
       }
     });
   };
