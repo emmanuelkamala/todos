@@ -1,3 +1,4 @@
+/*eslint no-alert: "error"*/
 const model = (() => {
   const items = [];
   const projects = [];
@@ -74,7 +75,7 @@ const model = (() => {
   const validateProjectForm = () => {
     const title = document.forms['ProjectForm']['title'];
     if (title.value === '') {
-      alert('Please enter a title.');
+      customAlert('Please enter a title.');
       title.focus();
       return false;
     }
