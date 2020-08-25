@@ -1,0 +1,252 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Roboto Condensed', 'sans-serif';
+	background-color: #fffefe;
+}
+
+body, html {
+	box-sizing: border-box;
+	overflow-x: hidden;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	display: inline;
+}
+
+a {
+	text-decoration: none;
+}
+/*
+	=================
+	HEADER
+	=================
+*/
+.header {
+	background-color: #3b3b3b;
+	height: 65px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	position: fixed;
+	z-index: 5;
+}
+
+.app-title {
+	color: #f7f1f3;
+	cursor: default;
+}
+
+.new-project-btn {
+	margin: 5px;
+	padding: 5px;
+	width: 120px;
+	text-align: center;
+	background-color: #256d2ec2;
+	color: #f7f1f3;
+	border-radius: 10px;
+	border: 3px solid #256d2ec2;
+	cursor: pointer;
+}
+
+/*
+	================
+	MAIN CONTENT
+	================
+*/
+.main {
+	margin-top: 65px;
+	margin-bottom: 50px;
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	position: relative;
+}
+
+/* PROJECTS COLUMN */
+.projects-column {
+	border-right: 4px solid #50394cc2;
+	height: 100vh;
+	background: #3b3b3b;
+	overflow-y: auto;
+	grid-column: 1 / 2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.column-btn {
+	margin: 10px 5px;
+	text-align: center;
+	border: 2px solid #3b3b3b;
+	background-color: #f7f1f3;
+	padding: 10px;
+	cursor: pointer;
+	min-width: 200px;
+}
+
+.column-btn-selected {
+	background-color: #f7f1f3;
+	color: #3b3b3b;
+}
+
+/* LIST BOX */
+.list-box {
+	padding: 20px;
+	overflow-y: auto;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	grid-column: 2 / 3;
+}
+
+.project-buttons {
+	display: flex;
+	justify-content: space-around;
+}
+
+.project-buttons >* {
+	border: 3px solid #503942;
+	border-radius: 5px;
+	background-color: #3b3b3b;
+	color: #f7f1f3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	padding: 0 5px;
+}
+
+.new-item-btn {
+	width: 20px;
+	height: 30px;
+	font-size: 25px;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+/* LIST ROW */
+.list-row {
+	display: grid;
+	grid-template-columns: 1fr 4fr 4fr 1fr 1fr;
+	align-items: center;
+	gap: 5px;
+	margin-bottom: 10px;
+}
+
+.title-row {
+	font-size: 14px;
+	margin-top: 10px;
+	margin-left: -15px;
+	margin-bottom: 5px;
+}
+
+.title-row >* {
+	text-align: center;
+	border-bottom: 1px solid black;
+	font-weight: bolder;
+}
+
+.item-done {
+	display: flex;
+	justify-content: center;
+}
+
+.item-edit, .item-remove {
+	border: 2px solid #503942;
+	border-radius: 50%;
+	font-size: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	width: 25px;
+	height: 25px;
+	color: #f7f1f3;
+	background-color: #3b3b3b;
+}
+
+.row-priority {
+	background-color: #ff0a0afb;
+	padding: 10px 0 10px 10px;
+
+}
+
+/* 
+	=====================
+	FORMS
+	=====================
+*/
+
+/* PROJECT FORM */
+.form-div {
+	height: 500px;
+	width: 350px;
+	background: rgba(100, 99, 99, 0.863);
+	position: fixed;
+	top: 100px;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 50;
+}
+
+.project-form, .item-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px;
+	color: #f7f1f3;
+}
+
+.project-form >*, .item-form >* {
+	margin: 5px;
+}
+
+input {
+	padding: 5px;
+	text-align: center;
+	border: 2px solid #50394cc2;
+}
+
+.button {
+	border-radius: 5px;
+	background: #3b3b3b;
+	border: 2px solid #503942;
+	padding: 5px 10px;
+	color: #f7f1f3;
+	cursor: pointer;
+	margin: 10px;
+	font-size: 15px;
+}
+
+
+/* min-width 768px */
+@media only screen and (min-width: 768px) {
+	.column-btn {
+		max-width: 230px;
+	}
+}
+
+/* min-width 992px */
+@media only screen and (min-width: 992px) {
+	.main {
+		margin-left: 100px;
+		margin-right: 100px;
+	}
+}
